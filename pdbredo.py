@@ -165,6 +165,7 @@ if __name__ == "__main__":
 
     # run refinements
     print("Running redos")
+    print("\t{}".format(redos))
     feedback = map(call_wrapper,
                    redos,
                    )
