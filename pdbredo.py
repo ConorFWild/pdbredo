@@ -147,7 +147,7 @@ if __name__ == "__main__":
                                                        ),
                        targets.items(),
                        )
-    print("Output paths\n\t{}".format(list(output_paths)))
+    # print("Output paths\n\t{}".format(list(output_paths)))
 
     # funcs
     print(list(targets.items()))
