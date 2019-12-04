@@ -172,9 +172,12 @@ if __name__ == "__main__":
     # feedback = map(call_wrapper,
     #                redos,
     #                )
-    feedback = map(lambda x: x(),
-                   redos,
-                   )
+    # feedback = map(lambda x: x(),
+    #                redos,
+    #                )
+    for i, redo in enumerate(redos):
+        print("\tDoing redo: {}".format(i))
+        redo()
 
     print("Saving feedback")
     # cache feedback
