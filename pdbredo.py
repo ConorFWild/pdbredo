@@ -161,14 +161,18 @@ if __name__ == "__main__":
                     mtzin=str(dataset["mtz"]),
                     dirout=str(output_path),
                     )
-        
+
         redos.append(redo)
 
 
     # run refinements
     print("Running redos")
-    print("\t{}".format(redos))
-    feedback = map(call_wrapper,
+    print("\tRunning {} redos".format(len(redos)))
+    # print("\t{}".format(redos))
+    # feedback = map(call_wrapper,
+    #                redos,
+    #                )
+    feedback = map(lambda x: x(),
                    redos,
                    )
 
