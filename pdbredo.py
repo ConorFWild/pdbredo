@@ -70,10 +70,10 @@ def make_output_dir(output: Path,
     output_path = output / dataset[0]
 
     try:
-        shutil.rmtree(str())
+        shutil.rmtree(str(output_path))
 
-    except:
-        pass
+    except Exception as e:
+        print(e)
 
     os.mkdir(str(output_path))
 
