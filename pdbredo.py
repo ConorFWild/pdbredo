@@ -16,6 +16,17 @@ def parse_args():
     parser.add_argument("--initial_model")
     parser.add_argument("--output")
     parser.add_argument("--n_procs")
+    parser.add_argument("--data_dir",
+                        default="/data",
+                        )
+    parser.add_argument("--output_dir",
+                        default="/output",
+                        )
+    parser.add_argument("--image_path",
+                        default="/pdbredo/pdbredo.simg",
+                        )
+
+
 
     return parser.parse_args()
 
