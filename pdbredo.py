@@ -139,6 +139,7 @@ if __name__ == "__main__":
 
     # Parse targets
     targets = parse_targets(Path(args.initial_model))
+    print("Targets\n\t{}".format(targets))
 
     # make output dirs
     output_paths = map(lambda dataset: make_output_dir(Path(args.output),
@@ -146,10 +147,11 @@ if __name__ == "__main__":
                                                        ),
                        targets.items(),
                        )
+    print("Output paths\n\t{}".format(output_paths))
 
     # funcs
     redos = [Redo(data_dir=args.data_dir,
-                  output_dir=args.ouput_dir,
+                  output_dir=args.output_dir,
                   image_path=args.image_path,
                   xyzin=str(dataset[1]["pdb"]),
                   mtzin=str(dataset[1]["mtz"]),
