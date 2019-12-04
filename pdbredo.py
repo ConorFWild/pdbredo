@@ -122,6 +122,8 @@ class Redo:
                                 stderr=subprocess.PIPE,
                                 )
         outs, errs = proc.communicate()
+        print("outs\n\t{}".format(outs))
+        print("errs\n\t {}".format(errs))
 
         return outs
 
