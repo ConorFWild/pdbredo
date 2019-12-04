@@ -13,9 +13,20 @@ from pathlib import Path
 def parse_args():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--initial_model")
-    parser.add_argument("--output")
-    parser.add_argument("--n_procs")
+    parser.add_argument("-i",
+                        "--initial_model",
+                        type=str,
+                        required=True,
+                        )
+    parser.add_argument("-o",
+                        "--output",
+                        type=str,
+                        required=True,
+                        )
+    parser.add_argument("-n",
+                        "--n_procs",
+                        default=1,
+                        )
     parser.add_argument("--data_dir",
                         default="/data",
                         )
