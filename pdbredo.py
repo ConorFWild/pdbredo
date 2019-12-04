@@ -52,7 +52,7 @@ def parse_targets(initial_models_path: Path) -> Dict[str, Dict[str, Path]]:
         try:
             pdb_path = dir.glob("*.pdb")
             mtz_path = dir.glob("*.mtz")
-            datasets[dir.name] = {"pbs": next(pdb_path),
+            datasets[dir.name] = {"pdb": next(pdb_path),
                                   "mtz": next(mtz_path),
                                   }
 
