@@ -161,6 +161,8 @@ if __name__ == "__main__":
                     mtzin=str(dataset["mtz"]),
                     dirout=str(output_path),
                     )
+        
+        redos.append(redo)
 
 
     # run refinements
