@@ -142,25 +142,27 @@ if __name__ == "__main__":
     print("Targets\n\t{}".format(targets))
 
     # make output dirs
-    output_paths = map(lambda dataset: make_output_dir(Path(args.output),
-                                                       dataset,
-                                                       ),
-                       targets.items(),
-                       )
+    output_paths = list(map(lambda dataset: make_output_dir(Path(args.output),
+                                                            dataset,
+                                                            ),
+                            targets.items(),
+                            )
+                        )
     # print("Output paths\n\t{}".format(list(output_paths)))
 
     # funcs
-    print(list(targets.items()))
-    redos = [Redo(data_dir=args.data_dir,
-                  output_dir=args.output_dir,
-                  image_path=args.image_path,
-                  xyzin=str(dataset[1]["pdb"]),
-                  mtzin=str(dataset[1]["mtz"]),
-                  dirout=str(output_path),
-                  )
-             for dataset, output_path
-             in zip(targets.items(), output_paths)
-             ]
+    redos = []
+    for i, dtag in enumerate(targets):
+        dataset = targets[dtag]
+        output_path = output_paths[i]
+        redo = Redo(data_dir=args.data_dir,
+                    output_dir=args.output_dir,
+                    image_path=args.image_path,
+                    xyzin=str(dataset["pdb"]),
+                    mtzin=str(dataset["mtz"]),
+                    dirout=str(output_path),
+                    )
+
 
     # run refinements
     feedback = map(call_wrapper,
