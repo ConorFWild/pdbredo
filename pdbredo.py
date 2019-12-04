@@ -86,7 +86,6 @@ def save_feedback(output_dir: Path, feedback: str):
         f.write(feedback)
 
 
-
 # redo
 class Redo:
 
@@ -139,7 +138,7 @@ if __name__ == "__main__":
 
     # Parse targets
     targets = parse_targets(Path(args.initial_model))
-    print("Targets\n\t{}".format(targets))
+    # print("Targets\n\t{}".format(targets))
 
     # make output dirs
     output_paths = list(map(lambda dataset: make_output_dir(Path(args.output),
@@ -165,10 +164,12 @@ if __name__ == "__main__":
 
 
     # run refinements
+    print("Running redos")
     feedback = map(call_wrapper,
                    redos,
                    )
 
+    print("Saving feedback")
     # cache feedback
     map(save_feedback,
         feedback,
