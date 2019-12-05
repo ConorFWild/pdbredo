@@ -155,7 +155,7 @@ def already_done(target_output_dir_path: Path):
 
     try:
         next(target_output_dir_path.glob(final_pdb_regex))
-        print("ALREADY FINISHED: {}".format(target_output_dir_path))
+        print("\tALREADY FINISHED: {}".format(target_output_dir_path))
         return True
 
     except:
@@ -166,6 +166,8 @@ def process_dataset(args, target):
 
     dtag = target[0]
     dataset = target[1]
+
+    print("### RUNNING PDBREDO FOR: {} ###".format(dtag))
 
     target_output_dir_path = Path(args.output) / dtag
 
@@ -198,12 +200,14 @@ if __name__ == "__main__":
     targets = parse_targets(Path(args.initial_model))
     # print("Targets\n\t{}".format(targets))
 
-    joblib.Parallel(n_jobs=int(args.n_procs))(joblib.delayed(process_dataset)(args,
-                                                                              dataset,
-                                                                              )
-                                              for dataset
-                                              in targets.items()
-                                              )
+    joblib.Parallel(n_jobs=int(args.n_procs),
+                    verbose=7,
+                    )(joblib.delayed(process_dataset)(args,
+                                                      dataset,
+                                                      )
+                      for dataset
+                      in targets.items()
+                      )
 
     #
     # # make output dirs
