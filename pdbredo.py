@@ -4,6 +4,7 @@ from typing import Dict, Tuple
 import os
 import shutil
 import subprocess
+import multiprocessing
 
 import argparse
 from pathlib import Path
@@ -177,9 +178,12 @@ if __name__ == "__main__":
     # feedback = map(lambda x: x(),
     #                redos,
     #                )
-    for i, redo in enumerate(redos):
-        print("\tDoing redo: {}".format(i))
-        redo()
+    # for i, redo in enumerate(redos):
+    #     print("\tDoing redo: {}".format(i))
+    #     redo()
+    feedback = multiprocessing.Pool(processes=int(args.n_procs)).map(call_wrapper,
+                                                                     redos,
+                                                                     )
 
     print("Saving feedback")
     # cache feedback
