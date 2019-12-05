@@ -99,7 +99,7 @@ def make_output_dir(output_dir_path: Path):
 # save feedback
 def save_feedback(output_dir: Path, feedback: str):
     with open(str(output_dir / "feedback.txt"), "w") as f:
-        f.write(feedback)
+        f.write(str(feedback))
 
 
 # redo
