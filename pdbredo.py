@@ -206,7 +206,7 @@ if __name__ == "__main__":
                                                       dataset,
                                                       )
                       for dataset
-                      in targets.items()
+                      in list(targets.items())
                       )
 
     #
