@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="043edd78-ad01-4d98-8d64-c2e99ea543d2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pdbredo.py" beforeDir="false" afterPath="$PROJECT_DIR$/pdbredo.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,10 +15,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pdbredo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
+            <state relative-caret-position="357">
+              <caret line="160" column="10" selection-start-line="160" selection-start-column="10" selection-end-line="160" selection-end-column="10" />
               <folding>
                 <element signature="e#10#33#0" expanded="true" />
+                <element signature="e#1593#1747#0" />
               </folding>
             </state>
           </provider>
@@ -123,10 +123,11 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pdbredo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
+        <state relative-caret-position="357">
+          <caret line="160" column="10" selection-start-line="160" selection-start-column="10" selection-end-line="160" selection-end-column="10" />
           <folding>
             <element signature="e#10#33#0" expanded="true" />
+            <element signature="e#1593#1747#0" />
           </folding>
         </state>
       </provider>
